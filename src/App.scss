@@ -1,38 +1,40 @@
-.App {
-  text-align: center;
-}
+@use '@carbon/react/scss/compat/themes' as compat;
+@use '@carbon/react/scss/themes';
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+$blue-10: #def2ff;
+$blue-20: #c2e5fc;
+$blue-30: #91cbf2;
+$blue-40: #5eb0eb;
+$blue-50: #2f97e0;
+$blue-60: #0078d4;
+$blue-70: #0061ab;
+$blue-80: #00417d;
+$blue-90: #002e5c;
+$blue-100: #001f3d;
+$turquoise-60: #00989F;
+$turquoise-40: #48B1B5;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+$theme--milliman: (
+        blue-10: $blue-10,
+        blue-20: $blue-20,
+        blue-30: $blue-30,
+        blue-40: $blue-40,
+        blue-50: $blue-50,
+        blue-60: $blue-60,
+        blue-70: $blue-70,
+        blue-80: $blue-80,
+        blue-90: $blue-90,
+        blue-100: $blue-100,
+        purple-60: $turquoise-60,
+        purple-40: $turquoise-40
+);
+@use '@carbon/react/scss/colors' with ($colors: $theme--milliman!important);
+@use '@carbon/react/scss/theme' with
+  (
+    $theme: $theme--milliman
+  );
+@use '@carbon/react';
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+:root {
+  @include theme.theme();
 }
