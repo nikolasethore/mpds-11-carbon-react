@@ -1,5 +1,4 @@
-@use '@carbon/react/scss/compat/themes' as compat;
-@use '@carbon/react/scss/themes';
+@use '@carbon/themes/scss/themes' as *;
 
 $blue-10: #def2ff;
 $blue-20: #c2e5fc;
@@ -26,15 +25,14 @@ $theme--milliman: (
         blue-90: $blue-90,
         blue-100: $blue-100,
         purple-60: $turquoise-60,
-        purple-40: $turquoise-40
+        purple-40: $turquoise-40,
 );
-@use '@carbon/react/scss/colors' with ($colors: $theme--milliman!important);
-@use '@carbon/react/scss/theme' with
+@use '@carbon/themes' with
   (
+    $fallback: $white,
     $theme: $theme--milliman
   );
-@use '@carbon/react';
 
 :root {
-  @include theme.theme();
+  @include themes.theme();
 }
