@@ -1,4 +1,4 @@
-@use '@carbon/themes/scss/themes' as *;
+@use '@carbon/colors/index' as colors;
 
 $blue-10: #def2ff;
 $blue-20: #c2e5fc;
@@ -13,25 +13,131 @@ $blue-100: #001f3d;
 $turquoise-60: #00989F;
 $turquoise-40: #48B1B5;
 
-$theme--milliman: (
-        blue-10: $blue-10,
-        blue-20: $blue-20,
-        blue-30: $blue-30,
-        blue-40: $blue-40,
-        blue-50: $blue-50,
-        blue-60: $blue-60,
-        blue-70: $blue-70,
-        blue-80: $blue-80,
-        blue-90: $blue-90,
-        blue-100: $blue-100,
-        purple-60: $turquoise-60,
-        purple-40: $turquoise-40,
-);
-@use '@carbon/themes' with
-  (
-    $fallback: $white,
-    $theme: $theme--milliman
-  );
+$blue-10-hover: #ccebff;
+$blue-20-hover: #a9dbfc;
+$blue-30-hover: #77c1f2;
+$blue-40-hover: #47a6eb;
+$blue-50-hover: #148be0;
+$blue-60-hover: #006bbd;
+$blue-70-hover: #007ede;
+$blue-80-hover: #005eb5;
+$blue-90-hover: #00468c;
+$blue-100-hover: #003973;
+$turquoise60-hover: #007F85;
+$turquoise40-hover: #36B1B5;
+
+@use '@carbon/themes' with (
+  $theme: (
+  background: colors.$white,
+  background-hover: transparentize(colors.$gray-50, 0.12),
+  background-active: transparentize(colors.$gray-50, 0.5),
+  background-selected: transparentize(colors.$gray-50, 0.2),
+  background-selected-hover: transparentize(colors.$gray-50, 0.32),
+  background-inverse: colors.$gray-80,
+  background-inverse-hover: colors.$gray-80-hover,
+  background-brand: $blue-60,
+  layer-01: colors.$gray-10,
+  layer-02: colors.$white,
+  layer-03: colors.$gray-10,
+  layer-hover-01: colors.$gray-10-hover,
+  layer-hover-02: colors.$gray-10-hover,
+  layer-hover-03: colors.$gray-10-hover,
+  layer-active-01: colors.$gray-30,
+  layer-active-02: colors.$gray-30,
+  layer-active-03: colors.$gray-30,
+  layer-selected-01: colors.$gray-20,
+  layer-selected-02: colors.$gray-20,
+  layer-selected-03: colors.$gray-20,
+  layer-selected-hover-01: colors.$gray-20-hover,
+  layer-selected-hover-02: colors.$gray-20-hover,
+  layer-selected-hover-03: colors.$gray-20-hover,
+  layer-selected-inverse: colors.$gray-100,
+  layer-selected-disabled: colors.$gray-50,
+  layer-accent-01: colors.$gray-20,
+  layer-accent-02: colors.$gray-20,
+  layer-accent-03: colors.$gray-20,
+  layer-accent-hover-01: colors.$gray-20-hover,
+  layer-accent-hover-02: colors.$gray-20-hover,
+  layer-accent-hover-03: colors.$gray-20-hover,
+  layer-accent-active-01: colors.$gray-40,
+  layer-accent-active-02: colors.$gray-40,
+  layer-accent-active-03: colors.$gray-40,
+  field-01: colors.$gray-10,
+  field-02: colors.$white,
+  field-03: colors.$gray-10,
+  field-hover-01: colors.$gray-10-hover,
+  field-hover-02: colors.$gray-10-hover,
+  field-hover-03: colors.$gray-10-hover,
+  border-interactive: $blue-60,
+  border-subtle-00: colors.$gray-20,
+  border-subtle-01: colors.$gray-30,
+  border-subtle-02: colors.$gray-20,
+  border-subtle-03: colors.$gray-30,
+  border-subtle-selected-01: colors.$gray-30,
+  border-subtle-selected-02: colors.$gray-30,
+  border-subtle-selected-03: colors.$gray-30,
+  border-strong-01: colors.$gray-50,
+  border-strong-02: colors.$gray-50,
+  border-strong-03: colors.$gray-50,
+  border-tile-01: colors.$gray-30,
+  border-tile-02: colors.$gray-40,
+  border-tile-03: colors.$gray-30,
+  border-inverse: colors.$gray-100,
+  border-disabled: colors.$gray-30,
+  text-primary: colors.$gray-100,
+  text-secondary: colors.$gray-70,
+  text-placeholder: colors.$gray-40,
+  text-on-color: colors.$white,
+  text-on-color-disabled: colors.$gray-50,
+  text-helper: colors.$gray-60,
+  text-error: colors.$red-60,
+  text-inverse: colors.$white,
+  text-disabled: transparentize(colors.$gray-100, 0.25),
+  link-primary: $blue-60,
+  link-primary-hover: $blue-70,
+  link-secondary: $blue-70,
+  link-inverse: $blue-40,
+  link-visited: $turquoise-60,
+  icon-primary: colors.$gray-100,
+  icon-secondary: colors.$gray-70,
+  icon-on-color: colors.$white,
+  icon-on-color-disabled: colors.$gray-50,
+  icon-interactive: $blue-60,
+  icon-inverse: colors.$white,
+  icon-disabled: transparentize(colors.$gray-100, 0.25),
+  button-primary: $blue-60,
+  button-primary-hover: $blue-60-hover,
+  button-primary-active: $blue-80,
+  button-secondary: colors.$gray-80,
+  button-secondary-hover: colors.$gray-80-hover,
+  button-secondary-active: colors.$gray-60,
+  button-tertiary: $blue-60,
+  button-tertiary-hover: $blue-60-hover,
+  button-tertiary-active: $blue-80,
+  button-danger-primary: colors.$red-60,
+  button-danger-secondary: colors.$red-60,
+  button-danger-hover: colors.$red-60-hover,
+  button-danger-active: colors.$red-80,
+  button-separator: colors.$gray-20,
+  button-disabled: colors.$gray-30,
+  support-error: colors.$red-60,
+  support-success: colors.$green-50,
+  support-warning: colors.$yellow-30,
+  support-info: $blue-70,
+  support-error-inverse: colors.$red-50,
+  support-success-inverse: colors.$green-40,
+  support-warning-inverse: colors.$yellow-30,
+  support-info-inverse: $blue-50,
+  focus: $blue-60,
+  focus-inset: colors.$white,
+  focus-inverse: colors.$white,
+  interactive: $blue-60,
+  highlight: $blue-20,
+  toggle-off: colors.$gray-50,
+  overlay: transparentize(colors.$gray-100, 0.5),
+  skeleton-element: colors.$gray-30,
+  skeleton-background: colors.$gray-10_hover
+));
 
 :root {
   @include themes.theme();
